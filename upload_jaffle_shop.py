@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
-from sqlalchemy import create_engine
-import pandas as pd
-engine = create_engine('postgresql://gitpod:gitpod@localhost:5432/jaffle_shop')
-shop_files = ['raw_customers.csv', 'raw_orders.csv', 'raw_payments.csv']
-for shop_file in shop_files:
-    df = pd.read_csv('raw_customers.csv')
-    df.to_sql(shop_file.split(".")[0], con = engine)
+if __name__ == "__main__":
+    from sqlalchemy import create_engine
+    import pandas as pd
+    engine = create_engine('postgresql://gitpod:gitpod@localhost:5432/jaffle_shop')
+    shop_files = ['raw_customers.csv', 'raw_orders.csv', 'raw_payments.csv']
+    for shop_file in shop_files:
+        df = pd.read_csv('raw_customers.csv')
+        df.to_sql(shop_file.split(".")[0], con = engine)
     

@@ -13,3 +13,10 @@ wget https://raw.githubusercontent.com/dbt-labs/jaffle_shop/main/seeds/raw_custo
 wget https://raw.githubusercontent.com/dbt-labs/jaffle_shop/main/seeds/raw_orders.csv
 wget https://raw.githubusercontent.com/dbt-labs/jaffle_shop/main/seeds/raw_payments.csv
 psql -c 'CREATE DATABASE jaffle_shop'
+python -m upload_jaffle_shop.py
+
+rm raw_customers.csv
+rm raw_orders.csv
+rm raw_payments.csv
+
+
